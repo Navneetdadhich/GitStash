@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import {Toaster} from 'react-hot-toast';
 import { Route, Routes } from "react-router-dom";
 
 import HomePage from "./pages/HomePage";
@@ -35,7 +35,7 @@ function App() {
               element={authUser ? <LikesPage /> : <Navigate to={"/login"} />}
             /> */}
           </Routes>
-          {/* <Toaster /> */}
+          <Toaster />
         </div>
       </div>
     </>
