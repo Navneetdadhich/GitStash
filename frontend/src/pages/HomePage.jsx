@@ -18,7 +18,11 @@ const HomePage = () => {
   const getUsers = useCallback(async(username="NavneetDadhich") => {
     setLoading(true);
   try {
-    const userRes = await fetch(`https://api.github.com/users/${username}`);
+    const userRes = await fetch(`https://api.github.com/users/${username}` , {
+      headers:{
+        authorization: `token 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`,
+      },
+    });
     const userProfile = await userRes.json();
     setUserProfile(userProfile);
 
