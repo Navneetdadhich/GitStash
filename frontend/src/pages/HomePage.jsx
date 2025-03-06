@@ -12,7 +12,7 @@ const HomePage = () => {
   const [userProfile, setUserProfile] = useState(null);
   const [repos, setRepos] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [sortType, setSortType] = useState("forks");
+  const [sortType, setSortType] = useState("recent");
 
 
   const getUsers = useCallback(async(username="NavneetDadhich") => {
@@ -20,7 +20,7 @@ const HomePage = () => {
   try {
     const userRes = await fetch(`https://api.github.com/users/${username}` , {
       headers:{
-        authorization: `token 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`,
+        authorization: `token ${import.meta.env.VITE_GITHUB_API_KEY}`,
       },
     });
     const userProfile = await userRes.json();
@@ -59,7 +59,7 @@ const HomePage = () => {
     setUserProfile(userProfile);
     setRepos(repos);
     setLoading(false);
-
+    setSortType('recent')
   };
 
    const onSort = (sortType) =>{
