@@ -16,20 +16,16 @@ const HomePage = () => {
 
 
   const getUsers = useCallback(async(username="NavneetDadhich") => {
+
+//     const apiKey = import.meta.env.VITE_GITHUB_API_KEY;
+// console.log("GitHub API Key:", apiKey); // Debugging step
     setLoading(true);
   try {
-    const userRes = await fetch(`https://api.github.com/users/${username}` , {
-      headers:{
-        authorization: `token ${import.meta.env.VITE_GITHUB_API_KEY}`,
-      },
-    });
-    const userProfile = await userRes.json();
-    setUserProfile(userProfile);
-
-    const repoRes = await fetch(userProfile.repos_url);
-    const repos = await repoRes.json();
+    const res = await fetch(`http://localhost:5000/api/users/profile/${username}`)
+    const {repos, userProfile} = await res.json();
     setRepos(repos);
-
+    setUserProfile(userProfile);
+    
     // console.log("userProfile", userProfile);
     // console.log("repo", repos);
 
