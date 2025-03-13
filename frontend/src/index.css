@@ -1,7 +1,8 @@
 @import "tailwindcss";
 
 body {
-	background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.4)), url("/bg.png");
+	background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.4)), url("/12.jpg");
+	background-color: #121212;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -32,3 +33,91 @@ body {
 		@apply bg-clip-padding backdrop-filter backdrop-blur-md hover:bg-gray-600/10 border border-gray-800 text-white;
 	}
 }
+
+
+/* .blob-outer-container {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+    inset: 0;
+    margin: auto;
+    filter: blur(100px);
+
+}
+
+.blob-inner-container {
+    border-radius: 99999px;
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 100vw;
+    height: 100vh;
+    min-width: 1000px;
+    overflow: hidden;
+    background-color: #fff;
+    transform: scale(0.8);
+}
+
+.blob {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    inset: 0;
+    margin: auto;
+    background: conic-gradient(from 0deg, #08f, #f60, #bbffa1, #4c00ff, #ab2666, #09f);
+    animation: spinBlob 8s linear infinite;
+}
+
+@keyframes spinBlob {
+    0% {
+        transform: rotate(0deg) scale(2);
+    }
+
+    100% {
+        transform: rotate(1turn) scale(2);
+    }
+} */
+
+.github-heatmap-container {
+  /* display: flex;
+  flex-direction: column; */
+
+    padding: 20px;
+    /* background: white; */
+    gap: 3px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .react-calendar-heatmap {
+    display: flex;
+    width: 100%;
+  }
+  
+  .react-calendar-heatmap .color-empty {
+    fill: #ebedf0;
+  }
+  
+  .react-calendar-heatmap .color-scale-1 {
+    fill: #9be9a8;
+  }
+  
+  .react-calendar-heatmap .color-scale-2 {
+    fill: #40c463;
+  }
+  
+  .react-calendar-heatmap .color-scale-3 {
+    fill: #30a14e;
+  }
+  
+  .react-calendar-heatmap .color-scale-4 {
+    fill: #216e39;
+  }
+  
+  /* Make the heatmap responsive */
+  @media (max-width: 768px) {
+    .react-calendar-heatmap {
+      font-size: 12px;
+    }
+  }
