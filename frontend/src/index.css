@@ -5,8 +5,8 @@ body {
   font-family: "Jost", sans-serif;
   
   font-style: normal;
-	background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.4)), url("/12.jpg");
-	background-color: #000000;
+	/* background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.4)), url("/12.jpg"); */
+	background-color: #ffffff;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -39,84 +39,70 @@ body {
 }
 
 
-/* .blob-outer-container {
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    z-index: 0;
-    inset: 0;
-    margin: auto;
-    filter: blur(100px);
-
-}
-
-.blob-inner-container {
-    border-radius: 99999px;
-    position: absolute;
-    inset: 0;
-    margin: auto;
-    width: 100vw;
-    height: 100vh;
-    min-width: 1000px;
-    overflow: hidden;
-    background-color: #fff;
-    transform: scale(0.8);
-}
-
-.blob {
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
-    inset: 0;
-    margin: auto;
-    background: conic-gradient(from 0deg, #08f, #f60, #bbffa1, #4c00ff, #ab2666, #09f);
-    animation: spinBlob 8s linear infinite;
-}
-
-@keyframes spinBlob {
-    0% {
-        transform: rotate(0deg) scale(2);
-    }
-
-    100% {
-        transform: rotate(1turn) scale(2);
-    }
-} */
 
 .github-heatmap-container {
   /* display: flex;
   flex-direction: column; */
-
-    padding: 20px;
+    color: #000000;
+    padding: 1rem;
     /* background: white; */
     gap: 3px;
-    border-radius: 8px;
+    margin: 1rem 0;
+    border-radius: 0.5rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .github-heatmap-container .overflow-x-auto {
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: rgba(156, 163, 175, 0.5) transparent; /* Firefox */
+  }
+
+
+  .github-heatmap-container .overflow-x-auto::-webkit-scrollbar {
+    height: 6px;
+  }
+  
+  .github-heatmap-container .overflow-x-auto::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .github-heatmap-container .overflow-x-auto::-webkit-scrollbar-thumb {
+    background-color: rgba(156, 163, 175, 0.5);
+    border-radius: 20px;
   }
   
   .react-calendar-heatmap {
+    color: #000000;
+    fill: #000000;
     display: flex;
     width: 100%;
   }
+  .react-calendar-heatmap text{
+    
+    fill: #000000;
+    
+    
+  }
   
   .react-calendar-heatmap .color-empty {
-    fill: #ebedf0;
+    fill: #e7cffeb4 !important;
   }
   
   .react-calendar-heatmap .color-scale-1 {
-    fill: #9be9a8;
+    fill: #cccdcc;
   }
   
   .react-calendar-heatmap .color-scale-2 {
-    fill: #40c463;
+    fill: #b2beb5;
   }
   
   .react-calendar-heatmap .color-scale-3 {
-    fill: #30a14e;
+    fill: #929c94;
   }
   
   .react-calendar-heatmap .color-scale-4 {
-    fill: #216e39;
+    fill: #4e5450;
   }
   
   /* Make the heatmap responsive */
