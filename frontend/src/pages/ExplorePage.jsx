@@ -26,8 +26,8 @@ const ExplorePage = () => {
   };
 
   return (
-    <div className="px-4">
-      <div className="bg-glass max-w-2xl mx-auto rounded-md p-4">
+    <div className="px-4 mt-5 ">
+      <div className="bg-glass max-w-2xl mx-auto rounded-md p-4 bg-gray-600/10 text-gray-600 shadow-lg">
         <h1 className="text-xl font-bold text-center">
           {" "}
           Explore Popular Repositories

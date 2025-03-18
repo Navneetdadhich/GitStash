@@ -1,5 +1,3 @@
  export const handleLoginWithGithub = () => {
-    window.open("/api/auth/github", "_self", {
-        credentials: "include"
-    });
+    window.location.href = "/api/auth/github";
 }

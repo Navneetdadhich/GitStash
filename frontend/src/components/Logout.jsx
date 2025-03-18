@@ -24,10 +24,10 @@ const Logout = () => {
 				className='w-10 h-10 rounded-full border border-gray-800'
 			/>
 
-			<div className='cursor-pointer flex items-center p-2 rounded-lg bg-glass mt-auto border border-gray-800'
+			<div className='cursor-pointer flex items-center p-2 rounded-lg bg-glass mt-auto border  border-gray-500 '
 			onClick={handleLogout}
 			>
-				<MdLogout size={22} />
+				<MdLogout size={22} className=""/>
 			</div>
 		</>
 	);

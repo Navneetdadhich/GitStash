@@ -6,6 +6,7 @@ import SortRepos from '../components/SortRepos';
 import ProfileInfo from '../components/ProfileInfo';
 import Repos from '../components/Repos';
 import Spinner from '../components/Spinner';
+import GitHubHeatmap from '../components/GithubHeatmap';
 
 const HomePage = () => {
 
@@ -13,6 +14,10 @@ const HomePage = () => {
   const [repos, setRepos] = useState([]);
   const [loading, setLoading] = useState(false);
   const [sortType, setSortType] = useState("recent");
+  const [contributions, setContributions] = useState({ total: 0, monthly: 0 });
+  const handleContributionsUpdate = (contributionsData) => {
+    setContributions(contributionsData);
+  }; 
 
 
   const getUsers = useCallback(async(username="NavneetDadhich") => {
@@ -26,7 +31,7 @@ const HomePage = () => {
     setRepos(repos);
     setUserProfile(userProfile);
     
-    // console.log("userProfile", userProfile);
+    console.log("userProfile", userProfile);
     // console.log("repo", repos);
 
     return {userProfile, repos};
@@ -70,21 +75,30 @@ const HomePage = () => {
     setRepos([...repos])
    }
 
+   
   return (
-    <div className='m-4'>
+    <div className=' flex flex-col items-center w-full px-4'>
+
+<div className='w-full max-w-3xl mt-5'> 
       <Search onSearch={onSearch}/>
-      {repos.length > 0 && <SortRepos onSort={onSort} sortType={sortType}/>}
+      {/* {repos.length > 0 && <SortRepos onSort={onSort} sortType={sortType}/>} */}
 
       <div className='flex gap-4 flex-col lg:flex-row justify-center items-start'>
-          {userProfile && !loading && <ProfileInfo userProfile={userProfile}/>}
+          {userProfile && !loading && <ProfileInfo userProfile={userProfile}
+          contributions={contributions}
+          />}
 
-       {
+       {/* {
           !loading && 
          <Repos repos={repos}/>
-       } 
+       }  */}
           {loading && <Spinner/>}
       </div>
+      {userProfile &&  <GitHubHeatmap username={userProfile.login}
+      onContributionsUpdate={handleContributionsUpdate}
+      />}
 
+      </div>
     </div>
   )
 }

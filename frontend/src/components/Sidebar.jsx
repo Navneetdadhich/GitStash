@@ -16,12 +16,12 @@ const Sidebar = () => {
   const {authUser} = useAuthContext();
   return (
     <aside
-      className="flex flex-col items-center min-w-12 sm:w-16 sticky top-0 left-0 h-screen py-8
-      overflow-y-auto border-r bg-glass"
+      className="flex flex-col items-center h-110 min-w-12 sm:w-16 sticky sm:top-30 sm:left-5 top-6 left-1 py-8 rounded-lg
+      overflow-y-auto bg-glass bg-gray-500/20 border-gray-400 shadow-xl"
     >
       <nav className="h-full flex flex-col gap-3">
         <Link to="/" className="flex justify-center">
-          <img className="h-8" src="/github.svg" alt="Github Logo" />
+          <img className="h-8 " src="/github.svg" alt="Github Logo" />
         </Link>
 
         <Link
@@ -29,7 +29,7 @@ const Sidebar = () => {
           className="p-1.5 flex justify-center transition-colors duration-200 rounded-lg 
 					hover:bg-gray-800"
         >
-          <IoHomeSharp size={20} />
+          <IoHomeSharp size={20} className="text-gray-400"/>
         </Link>
 
         { authUser &&
@@ -37,7 +37,7 @@ const Sidebar = () => {
             to="/likes"
             className="p-1.5 flex justify-center transition-colors duration-200 rounded-lg hover:bg-gray-800"
           >
-            <FaHeart size={20} />
+            <FaHeart size={20} className="text-gray-400"/>
           </Link>
         }
 
@@ -46,7 +46,7 @@ const Sidebar = () => {
             to="/explore"
             className="p-1.5  flex justify-center transition-colors duration-200 rounded-lg hover:bg-gray-800"
           >
-            <MdOutlineExplore size={25} />
+            <MdOutlineExplore size={25} className="text-gray-400"/>
           </Link>
         )}
 

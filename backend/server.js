@@ -5,6 +5,11 @@ import passport from "passport";
 import session from "express-session";
 // import path from "path";
 import "./passport/github.auth.js"
+// ... existing imports ...
+import githubRoutes from './routes/github.js';
+
+// ... existing middleware ...
+// ... rest of your server code ...
 
 import userRoutes from "./routes/user.route.js"
 import exploreRoutes from "./routes/explore.route.js"
@@ -31,6 +36,7 @@ app.get("/", (req,res) => {
     res.send("server is ready");
 });
 
+app.use('/api/github', githubRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/explore", exploreRoutes);
