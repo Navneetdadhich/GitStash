@@ -26,7 +26,12 @@ const HomePage = () => {
 // console.log("GitHub API Key:", apiKey); // Debugging step
     setLoading(true);
   try {
-    const res = await fetch(`/api/users/profile/${username}`)
+    const res = await fetch(`/api/users/profile/${username}`);
+
+    if (!res.ok) {
+      const errorData = await res.json();
+      throw new Error(errorData.error || 'Failed to fetch profile');
+    }
     const {repos, userProfile} = await res.json();
     setRepos(repos);
     setUserProfile(userProfile);

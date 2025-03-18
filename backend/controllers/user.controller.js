@@ -20,7 +20,8 @@ export const getUserProfileAndRepos = async (req, res) => {
 
         // Fetch User Profile
         const userRes = await fetch(`https://api.github.com/users/${username}`, {
-            headers: { Authorization: `token ${GITHUB_API_KEY}` },
+            headers: { Authorization: `Bearer ${GITHUB_API_KEY}`,
+            'Accept': 'application/vnd.github.v3+json' },
         });
 
         if (!userRes.ok) throw new Error(`GitHub User API error: ${userRes.status}`);
