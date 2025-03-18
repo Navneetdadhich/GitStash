@@ -161,12 +161,17 @@ const LandingPage = () => {
          
         </div>
 
-        <div className="bg-white text-black text-center overflow-hidden overflow-y-hidden ">
+        <div className="bg-white text-black text-center">
+        <div className="relative z-10 mb-4">
         <p className="text-center text-gray-400 text-md sm:translate-y-20">Made by <a href="" className="text-gray-600 font-semibold"> Navneet </a>
         </p>
         <p className="text-center text-gray-400 text-sm sm:translate-y-20">GitStash @2025
         </p>
+
+        </div>
+        <div className="relative overflow-hidden"> 
           <h1 className="text-[5rem] sm:text-[18rem] font-bold bg-gradient-to-r from-gray-50 to-black bg-clip-text text-transparent select-none transform translate-y-10 sm:translate-y-40 opacity-40 shadow-lg">GitStash</h1>
+        </div>
         </div>
       </div>
     </>
