@@ -98,7 +98,7 @@ const LandingPage = () => {
 
       {/* mid page */}
 
-      <div className="relative top-0 -z-10 sm:h-screen w-full py-16 bg-white">
+      <div className="relative top-0 -z-10 sm:h-screen h-[85vh] w-full py-16 bg-white ">
       <div class="absolute bottom-auto left-auto right-0 top-0 sm:h-[500px] sm:w-[500px] h-[300px] w-[300px] sm:-translate-x-[170%] -translate-x-[10%] translate-y-[30%] sm:translate-y-[20%] rounded-full bg-[rgba(173,109,244,0.5)] opacity-50 blur-[70px]"></div>
 
 
@@ -111,7 +111,7 @@ const LandingPage = () => {
           className="w-full h-auto max-w-[800px] mx-auto object-contain border-2 border-gray-300 shadow-lg rounded-2xl"
         />
       </div>
-      <div className="w-full md:w-1/2 space-y-6">
+      <div className="w-full md:w-1/2 space-y-6 ">
         <h2 className="sm:text-4xl text-3xl font-bold text-gray-800">
           Analyze GitHub Profiles
         </h2>
