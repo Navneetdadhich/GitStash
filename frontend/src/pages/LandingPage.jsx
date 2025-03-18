@@ -98,7 +98,7 @@ const LandingPage = () => {
 
       {/* mid page */}
 
-      <div className="relative top-0 -z-10 sm:h-screen h-[85vh] w-full py-16 bg-white ">
+      <div className="relative top-0 -z-10 sm:h-screen w-full py-16 bg-white ">
       <div class="absolute bottom-auto left-auto right-0 top-0 sm:h-[500px] sm:w-[500px] h-[300px] w-[300px] sm:-translate-x-[170%] -translate-x-[10%] translate-y-[30%] sm:translate-y-[20%] rounded-full bg-[rgba(173,109,244,0.5)] opacity-50 blur-[70px]"></div>
 
 
@@ -126,7 +126,7 @@ const LandingPage = () => {
 
       
 
-      <div className="relative top-0 -z-10 h-full w-full w-full py-4 bg-white text-black">
+      <div className="relative top-0 -z-10 sm:h-full w-full h-screen py-4 bg-white text-black">
       <div class="absolute bottom-auto left-auto right-0 top-0 h-[500px] w-[500px] -translate-x-[30%] translate-y-[20%] rounded-full bg-[rgba(173,109,244,0.5)] opacity-50 blur-[80px]"></div>
 
 
