@@ -8,7 +8,7 @@ dotenv.config(); // Load environment variables
 
 export const getUserProfileAndRepos = async (req, res) => {
     const { username } = req.params;
-    const GITHUB_API_KEY="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";
+    const GITHUB_API_KEY=process.env.GITHUB_API_KEY;
 
     console.log("Fetching profile for:", username);
 

@@ -32,7 +32,7 @@ router.get("/contributions/:username", async (req, res) => {
     const response = await fetch("https://api.github.com/graphql", {
       method: "POST",
       headers: {
-        "Authorization": `Bearer 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`,
+        "Authorization": `Bearer ${process.env.GITHUB_CLIENT_SECRET}`,
         "Content-Type": "application/json"
       },
       body: JSON.stringify(query),
