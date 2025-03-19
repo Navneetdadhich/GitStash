@@ -8,11 +8,9 @@ dotenv.config(); // Load environment variables
 
 export const getUserProfileAndRepos = async (req, res) => {
     const { username } = req.params;
-    const GITHUB_API_KEY=process.env.GITHUB_API_KEY;
 
     console.log("Fetching profile for:", username);
 
-    /*console.log("GitHub API Key:", GITHUB_API_KEY); // Debugging log*/
 
     try {
         if (!GITHUB_API_KEY) {
@@ -22,8 +20,8 @@ export const getUserProfileAndRepos = async (req, res) => {
 
         // Fetch User Profile
         const userRes = await fetch(`https://api.github.com/users/${username}`, {
-            headers: { Authorization: `Bearer ${GITHUB_API_KEY}`,
-            // 'Accept': 'application/vnd.github.v3+json' 
+            headers: { Authorization: `Bearer ${process.env.GITHUB_API_KEY}`,
+            'Accept': 'application/vnd.github.v3+json' 
         },
         });
 
@@ -35,7 +33,7 @@ export const getUserProfileAndRepos = async (req, res) => {
 
         // Fetch User Repositories
         const repoRes = await fetch(userProfile.repos_url, {
-            headers: { Authorization: `bearer ${GITHUB_API_KEY}` },
+            headers: { Authorization: `bearer ${process.env.GITHUB_API_KEY}` },
         });
 
         if (!repoRes.ok) throw new Error(`GitHub Repos API error: ${repoRes.status}`);
