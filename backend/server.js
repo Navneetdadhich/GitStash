@@ -33,11 +33,11 @@ app.use(passport.session());
 
 // app.use(cors());
 
-app.use(cors({
-    origin: process.env.CLIENT_BASE_URL,
-    methods: "GET,POST,PUT,DELETE",
-    credentials: true,  // This is important for authentication
-}));
+// app.use(cors({
+//     origin: process.env.CLIENT_BASE_URL,
+//     methods: "GET,POST,PUT,DELETE",
+//     credentials: true,  
+// }));
 
 // app.get("/", (req,res) => {
 //     res.send("server is ready");
