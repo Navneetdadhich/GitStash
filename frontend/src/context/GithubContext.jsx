@@ -19,7 +19,7 @@ export const GithubProvider = ({ children }) => {
   useEffect(() => {
     const savedRepos = localStorage.getItem('repos');
     if (savedRepos) {
-      // setRepos(JSON.parse(savedRepos));
+      setRepos(JSON.parse(savedRepos));
     }
   }, []);
 
