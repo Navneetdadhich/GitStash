@@ -7,19 +7,23 @@ export const GithubProvider = ({ children }) => {
   const [userProfile, setUserProfile] = useState(null);
 
   const updateGithubData = (newRepos, newProfile) => {
-
-    // if(!newRepos|| !newProfile){
-    //   return;
-    // }
+    // if (!newRepos || !newProfile) return;
+  
     setRepos(newRepos);
     setUserProfile(newProfile);
-    localStorage.setItem('repos', JSON.stringify(newRepos)); 
+  
+    localStorage.setItem('repos', JSON.stringify(newRepos));
   };
-
+  
   useEffect(() => {
     const savedRepos = localStorage.getItem('repos');
     if (savedRepos) {
-      setRepos(JSON.parse(savedRepos));
+      try {
+        const parsedRepos = JSON.parse(savedRepos);
+        if (parsedRepos) setRepos(parsedRepos);
+      } catch (error) {
+        console.error('Error parsing repos from localStorage:', error);
+      }
     }
   }, []);
 
