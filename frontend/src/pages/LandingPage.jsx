@@ -106,7 +106,7 @@ const LandingPage = () => {
     <div className="flex flex-col md:flex-row items-center justify-between gap-8">
       <div className="w-full md:w-60vw z-99">
         <img 
-          src="/landimg2.png" 
+          src="/rrte.png" 
           alt="Landing illustration" 
           className="w-full h-auto max-w-[800px] mx-auto object-contain border-2 border-gray-300 shadow-lg rounded-2xl"
         />
