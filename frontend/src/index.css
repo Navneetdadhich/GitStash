@@ -11,6 +11,8 @@ body {
 	background-size: cover;
 	background-position: center;
 	background-attachment: fixed;
+
+
 }
 
 
@@ -111,3 +113,14 @@ body {
       font-size: 12px;
     }
   }
+
+
+  .explore-container {
+    max-height: 100vh; 
+    overflow-y: auto; 
+    overflow-x: hidden;
+    max-width: 100%;
+
+}
+
+

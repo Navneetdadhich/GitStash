@@ -3,10 +3,15 @@ import Repo from './Repo'
 
 const Repos = ({repos, alwaysFullWidth=false}) => {
 
-	const className = alwaysFullWidth ? 'w-full' : 'lg:w-2/3 w-full';
+	// e.prevenyDefault();
+
+	console.log(repos);
+	
+
+	const className = alwaysFullWidth ? 'w-full' : ' w-full';
 
   return (
-    <div className={`${className} bg-glass rounded-lg px-8 py-6`}>
+    <div className={`${className} bg-glass rounded-lg px-8 py-6 bg-gray-500/20 border-gray-400 shadow-xl`}>
 			<ol className='relative border-s border-gray-200 flex flex-col gap-5'>
 
 		{

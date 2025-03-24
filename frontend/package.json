@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.0.8",
+    "html2canvas": "^1.4.1",
+    "html2canvas-pro": "^1.5.8",
     "react": "^19.0.0",
     "react-calendar-heatmap": "^1.10.0",
     "react-dom": "^19.0.0",

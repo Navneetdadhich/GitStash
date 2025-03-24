@@ -22,6 +22,7 @@ const LikesPage = () => {
 	console.log("likes:", likes);
 
   return (
+	<>
     <div className='relative overflow-x-auto shadow-lg rounded-lg border border-gray-400 px-4 mt-10 p-5 bg-gray-600/10'>
       <table className='w-full text-sm text-left rt1:text-right bg-glass overflow-hidden border border-gray-500 text-gray-600'>
         <thead>
@@ -43,7 +44,7 @@ const LikesPage = () => {
 
         <tbody className=''>
         {likes.map((user, idx) => (
-						<tr className='bg-glass border-b rounded-lg text-gray-600' key={user.username}>
+			<tr className='bg-glass border-b rounded-lg text-gray-600' key={user.username}>
 							<td className='w-4 p-4'>
 								<div className='flex items-center'>
 									<span>{idx + 1}</span>
@@ -68,6 +69,7 @@ const LikesPage = () => {
 
       </table>
     </div>
+					</>
   )
 }
 

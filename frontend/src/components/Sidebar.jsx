@@ -32,18 +32,18 @@ const Sidebar = () => {
           <IoHomeSharp size={20} className="text-gray-400"/>
         </Link>
 
-        { authUser &&
+        {/* { authUser &&
           <Link
             to="/likes"
             className="p-1.5 flex justify-center transition-colors duration-200 rounded-lg hover:bg-gray-800"
           >
             <FaHeart size={20} className="text-gray-400"/>
           </Link>
-        }
+        } */}
 
         { authUser && (
           <Link
-            to="/explore"
+            to="/repository"
             className="p-1.5  flex justify-center transition-colors duration-200 rounded-lg hover:bg-gray-800"
           >
             <MdOutlineExplore size={25} className="text-gray-400"/>

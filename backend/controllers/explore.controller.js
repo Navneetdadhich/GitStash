@@ -5,7 +5,7 @@ export const explorePopularRepos = async (req,res) => {
         const response = await fetch(
             `https://api.github.com/search/repositories?q=language:${language}&sort=stars&order=desc&per_page=10`,{
               headers:{
-                authorization : `token ${process.env.GITHUB_API_KEY}`,
+                authorization : `token ${process.env.REACT_APP_GITHUB_API_KEY}`,
               },
             }
           );

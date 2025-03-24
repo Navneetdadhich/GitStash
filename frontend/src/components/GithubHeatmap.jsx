@@ -78,7 +78,7 @@ const GitHubHeatmap = ({ username, onContributionsUpdate }) => {
   startDate.setFullYear(startDate.getFullYear() - 1);
 
   return (
-    <div className="w-full github-heatmap-container shadow-2xl border bg-glass bg-gray-400/10 border-gray-400 text-gray-700">
+    <div className="max-w-3xl github-heatmap-container shadow-2xl border bg-glass bg-gray-400/10 border-gray-400 text-gray-700">
       <h2 className="">{username}'s GitHub Contributions</h2>
       <div className="overflow-x-auto overflow-y-hidden">
 
@@ -112,6 +112,18 @@ const GitHubHeatmap = ({ username, onContributionsUpdate }) => {
       </div>
 
       <Tooltip id="github-tooltip"/>
+
+      <div className="flex gap-1 pt-2">
+        <p className="sm:text-md text-sm">Less</p>
+        <div className="flex gap-1 h-5 items-center justify-center">
+          <div className="h-2 w-2 bg-gray-400"></div>
+          <div className="h-2 w-2 bg-gray-500"></div>
+          <div className="h-2 w-2 bg-gray-700"></div>
+          <div className="h-2 w-2 bg-gray-800"></div>
+          
+        </div>
+        <p className="sm:text-md text-sm">More</p>
+      </div>
     </div>
   );
 };

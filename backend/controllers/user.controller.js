@@ -4,6 +4,7 @@ import User from "../models/user.model.js";
 
 dotenv.config(); // Load environment variables
 
+
 // require('dotenv').config();
 
 export const getUserProfileAndRepos = async (req, res) => {
@@ -13,14 +14,10 @@ export const getUserProfileAndRepos = async (req, res) => {
 
 
     try {
-        if (!GITHUB_API_KEY) {
-            console.error("GitHub API key is missing");
-            return res.status(500).json({ error: "GitHub API key is missing" });
-        }
-
+       
         // Fetch User Profile
         const userRes = await fetch(`https://api.github.com/users/${username}`, {
-            headers: { Authorization: `Bearer ${process.env.GITHUB_API_KEY}`,
+            headers: { Authorization: `token ${process.env.REACT_APP_GITHUB_API_KEY}`,
             'Accept': 'application/vnd.github.v3+json' 
         },
         });
@@ -33,7 +30,7 @@ export const getUserProfileAndRepos = async (req, res) => {
 
         // Fetch User Repositories
         const repoRes = await fetch(userProfile.repos_url, {
-            headers: { Authorization: `bearer ${process.env.GITHUB_API_KEY}` },
+            headers: { Authorization: `token ${process.env.REACT_APP_GITHUB_API_KEY}` },
         });
 
         if (!repoRes.ok) throw new Error(`GitHub Repos API error: ${repoRes.status}`);

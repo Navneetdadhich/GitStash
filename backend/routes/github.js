@@ -5,8 +5,10 @@ const router = express.Router();
 
 dotenv.config();
 
+
 router.get("/contributions/:username", async (req, res) => {
   const { username } = req.params;
+  // console.log(apikey);
   
   const query = {
     query: `
@@ -32,11 +34,13 @@ router.get("/contributions/:username", async (req, res) => {
     const response = await fetch("https://api.github.com/graphql", {
       method: "POST",
       headers: {
-        "Authorization": `Bearer ${process.env.GITHUB_CLIENT_SECRET}`,
+        "Authorization": `token ${process.env.REACT_APP_GITHUB_API_KEY}`,
         "Content-Type": "application/json"
       },
       body: JSON.stringify(query),
     });
+
+    
 
     const data = await response.json();
     console.log(data.data.user.contributionsCollection.contributionCalendar);

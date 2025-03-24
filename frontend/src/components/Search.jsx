@@ -9,7 +9,7 @@ const Search = ({onSearch}) => {
 		<>
 		
 
-		<form className='left-0 max-w-3xl p-1'
+		<form className='left-0 max-w-4xl p-1'
 		onSubmit={(e) => onSearch(e, username)}
 		>
 			<label htmlFor='default-search' className='mb-2 text-sm font-medium text-gray-900 sr-only'>

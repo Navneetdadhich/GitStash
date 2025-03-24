@@ -10,6 +10,10 @@ import githubRoutes from './routes/github.js';
 
 // ... existing middleware ...
 // ... rest of your server code ...
+dotenv.config();
+
+// console.log("api key", process.env.REACT_APP_GITHUB_API_KEY);
+
 
 import userRoutes from "./routes/user.route.js"
 import exploreRoutes from "./routes/explore.route.js"
@@ -17,7 +21,6 @@ import authRoutes from "./routes/auth.route.js"
 import connectMongoDB from "./db/connectMongoDB.js";
 import path from "path"
 
-dotenv.config();
 const app = express();
 const PORT = process.env.PORT  || 5000;
 const __dirname = path.resolve();

@@ -13,6 +13,7 @@ import { FaEye } from "react-icons/fa";
 import LikeProfile from "./LikeProfile";
 import GitHubHeatmap from "./GithubHeatmap";
 
+
 const ProfileInfo = ({ userProfile, contributions }) => {
   // const [contributionss, setContributions] = useState({ total: 0, monthly: 0 });
 
@@ -25,14 +26,15 @@ const ProfileInfo = ({ userProfile, contributions }) => {
   const membersince = formatMemberSince(userProfile?.created_at);
 
   return (
-    <div className="max-w-3xl flex sm:flex-row flex-col items-center gap-2 lg:sticky md:top-10 mb-2">
+    <div className="max-w-4xl flex sm:flex-row flex-col items-center gap-2 lg:sticky md:top-10 mb-2">
       <div className="w-[250px] sm:w-[350px] bg-glass rounded-lg p-4 bg-gray-500/10 border-gray-400 shadow-lg">
-        <div className="flex gap-4 items-center">
+        <div className="flex gap-4 items-center ">
           <a href={userProfile?.html_url} target="_blank" rel="noreferrer">
             <img
               src={userProfile?.avatar_url}
               className="rounded-md w-24 h-24 mb-2"
               alt=""
+              crossorigin="anonymous"
             />
           </a>
 

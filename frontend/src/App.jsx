@@ -30,7 +30,7 @@ function App() {
 
       <div className="flex relative w-full min-h-screen">
         {authUser&&<Sidebar />}
-        <div className={`${authUser ? 'max-w-3xl mx-auto' : 'w-full h-screen'} text-white transition-all duration-300 flex-1`}>
+        <div className={`${authUser ? 'max-w-4xl mx-auto' : 'w-full h-screen'} text-white transition-all duration-300 flex-1`}>
           <Routes>
             <Route path="/" element={authUser ? <Navigate to="/home" /> : <LandingPage />}/>
 
@@ -38,8 +38,8 @@ function App() {
             <Route path="/login" element={!authUser ? <LoginPage /> : <Navigate to={"/home"}/>} />
 
             <Route path="/signup" element={!authUser ? <SignUpPage /> : <Navigate to={"/home"}/>}  />
-            <Route path="/explore" element={authUser ? <ExplorePage /> : <Navigate to={"/login"}/>} />
-            <Route path="/likes" element={authUser ? <LikesPage /> : <Navigate to={"/login"}/>} />
+            <Route path="/repository" element={authUser ? <ExplorePage /> : <Navigate to={"/login"}/>} />
+            {/* <Route path="/likes" element={authUser ? <LikesPage /> : <Navigate to={"/login"}/>} /> */}
             
           </Routes>
           <Toaster />

@@ -163,7 +163,7 @@ const LandingPage = () => {
 
         <div className="bg-white text-black text-center">
         <div className="relative z-10 mb-4">
-        <p className="text-center text-gray-400 text-md sm:translate-y-20">Made by <a href="" className="text-gray-600 font-semibold"> Navneet </a>
+        <p className="text-center text-gray-400 text-md sm:translate-y-20">Made by <a href="https://github.com/Navneetdadhich" className="text-gray-600 font-semibold"> Navneet </a>
         </p>
         <p className="text-center text-gray-400 text-sm sm:translate-y-20">GitStash @2025
         </p>
