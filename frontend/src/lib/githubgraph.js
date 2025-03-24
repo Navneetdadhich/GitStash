@@ -2,7 +2,7 @@ export const fetchGitHubGraph = async (username) => {
     if (!username) return null;
     
     try {
-        const response = await fetch(`/api/github/contributions/${username}`);
+        const response = await fetch(`https://gitstash.onrender.com/api/github/contributions/${username}`);
         if (!response.ok) {
             throw new Error('Failed to fetch GitHub contributions');
         }
