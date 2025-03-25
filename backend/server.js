@@ -49,7 +49,7 @@ app.use(cors({
 app.use('/api/github', githubRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
-app.use("/api/explore", exploreRoutes);
+// app.use("/api/repository", exploreRoutes);
 
 app.use(express.static(path.join(__dirname, "/frontend/dist")));
 

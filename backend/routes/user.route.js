@@ -7,8 +7,8 @@ const router = express.Router();
 
 router.get("/profile/:username", getUserProfileAndRepos);
 
-router.get("/likes", ensureAuthenticated, getLikes)
+// router.get("/likes", ensureAuthenticated, getLikes)
 
-router.post("/like/:username", ensureAuthenticated, likeProfile)
+// router.post("/like/:username", ensureAuthenticated, likeProfile)
 
 export default router;

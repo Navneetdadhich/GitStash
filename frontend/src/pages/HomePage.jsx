@@ -1,9 +1,9 @@
 import toast from "react-hot-toast";
 import React, { useCallback, useEffect, useState } from "react";
 import Search from "../components/Search";
-import SortRepos from "../components/SortRepos";
+// import SortRepos from "../components/SortRepos";
 import ProfileInfo from "../components/ProfileInfo";
-import Repos from "../components/Repos";
+// import Repos from "../components/Repos";
 import Spinner from "../components/Spinner";
 import GitHubHeatmap from "../components/GithubHeatmap";
 import { useGithub } from "../context/GithubContext";
@@ -13,7 +13,6 @@ const HomePage = () => {
   const [userProfile, setUserProfile] = useState(null);
   const [repos, setRepos] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [sortType, setSortType] = useState("recent");
   const [contributions, setContributions] = useState({ total: 0, monthly: 0 });
   const handleContributionsUpdate = (contributionsData) => {
     setContributions(contributionsData);
@@ -22,6 +21,7 @@ const HomePage = () => {
   const { updateGithubData } = useGithub();
 
   const getUsers = useCallback(
+    
     async (username="doejohn") => {
       setLoading(true);
       try {
@@ -59,20 +59,8 @@ const HomePage = () => {
     setUserProfile(userProfile);
     setRepos(repos);
     setLoading(false);
-    setSortType("recent");
   };
 
-  //  const onSort = (sortType) =>{
-  //   if(sortType === "recent"){
-  //     repos.sort((a,b) => new Date(b.created_at) - new Date(a.created_at));
-  //   } else if(sortType === "stars"){
-  //     repos.sort((a,b) => new Date(b.stargazers_count) - new Date(a.stargazers_count));
-  //   }else if(sortType === "forks"){
-  //     repos.sort((a,b) => new Date(b.forks_count) - new Date(a.forks_count));
-  //   }
-  //   setSortType(sortType);
-  //   setRepos([...repos])
-  //  }
 
   const generateImage = () => {
     const element = document.getElementById("stats");
@@ -81,9 +69,9 @@ const HomePage = () => {
       return;
     }
     html2canvas(element, {
-      useCORS: true, // Allow capturing external images
-      allowTaint: true, // Allow tainted images
-      scale: 2, // Improve quality
+      useCORS: true, 
+      allowTaint: true, 
+      scale: 2, 
     }).then((canvas) => {
       let image = canvas.toDataURL("image/jpeg");
       console.log("iamge", image);
