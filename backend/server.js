@@ -26,6 +26,7 @@ const __dirname = path.resolve();
 
 console.log(__dirname);
 
+app.use(express.json());
 
 app.use(session({ secret: "keyboard cat", resave: false, saveUninitialized: false }));
 // Initialize Passport!  Also use passport.session() middleware, to support
@@ -52,9 +53,14 @@ app.use("/api/users", userRoutes);
 
 app.use(express.static(path.join(__dirname, "/frontend/dist")));
 
-app.get("*", (res,req) => {
+app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "frontend", "dist", "index.html"));
 })
+
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send('Something broke!');
+});
 
 app.listen(PORT, () => {
     console.log(`server started on http://localhost:${PORT}`);

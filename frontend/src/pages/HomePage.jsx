@@ -76,7 +76,7 @@ const HomePage = () => {
     html2canvas(element, {
       useCORS: true, 
       allowTaint: true, 
-      scale: 1, 
+      scale: 2, 
     }).then((canvas) => {
       let image = canvas.toDataURL("image/jpeg");
       console.log("iamge", image);
