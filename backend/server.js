@@ -1,6 +1,7 @@
 import express from "express";
 import dotenv, { config } from "dotenv";
 import cors from "cors";
+import path from "path"
 import passport from "passport";
 import session from "express-session";
 // import path from "path";
@@ -12,14 +13,12 @@ import githubRoutes from './routes/github.js';
 // ... rest of your server code ...
 dotenv.config();
 
-// console.log("api key", process.env.REACT_APP_GITHUB_API_KEY);
 
 
 import userRoutes from "./routes/user.route.js"
 import exploreRoutes from "./routes/explore.route.js"
 import authRoutes from "./routes/auth.route.js"
 import connectMongoDB from "./db/connectMongoDB.js";
-import path from "path"
 
 const app = express();
 const PORT = process.env.PORT  || 5000;
