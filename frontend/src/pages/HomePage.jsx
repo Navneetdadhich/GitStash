@@ -27,6 +27,10 @@ const HomePage = () => {
       try {
         const res = await fetch(`/api/users/profile/${username}`);
 
+        if (!res.ok) {
+          throw new Error(`Error: ${res.status} ${res.statusText}`);
+        }
+
         const { repos, userProfile } = await res.json();
         setRepos(repos);
         setUserProfile(userProfile);
@@ -36,7 +40,8 @@ const HomePage = () => {
 
         return { userProfile, repos };
       } catch (error) {
-        toast.error(error.message);
+        const errorMessage = error instanceof Error ? error.message : "An unexpected error occurred.";
+        toast.error(errorMessage);
       } finally {
         setLoading(false);
       }
@@ -71,7 +76,7 @@ const HomePage = () => {
     html2canvas(element, {
       useCORS: true, 
       allowTaint: true, 
-      scale: 2, 
+      scale: 1, 
     }).then((canvas) => {
       let image = canvas.toDataURL("image/jpeg");
       console.log("iamge", image);
